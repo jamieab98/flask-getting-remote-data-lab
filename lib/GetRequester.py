@@ -8,12 +8,11 @@ class GetRequester:
 
     def load_json(self):
         response = requests.get(self.url)
-        return response.json()
+        return response.content
 
     def get_response_body(self):
         data = json.dumps(self.load_json(), indent=1)
         return data
 
 g = GetRequester("https://learn-co-curriculum.github.io/json-site-example/endpoints/people.json")
-print(g.get_response_body())
 print(g.load_json())
