@@ -11,8 +11,9 @@ class GetRequester:
         return response.content
 
     def get_response_body(self):
-        data = json.dumps(self.load_json(), indent=1)
-        return data
+        response = requests.get(self.url)
+        data = json.dumps(response.json(), indent=1)
+        return(data)
 
 g = GetRequester("https://learn-co-curriculum.github.io/json-site-example/endpoints/people.json")
-print(g.load_json())
+print(g.get_response_body())
