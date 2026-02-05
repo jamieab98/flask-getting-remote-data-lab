@@ -6,11 +6,11 @@ class GetRequester:
     def __init__(self, url):
         self.url = url
 
-    def get_response_body(self):
+    def load_json(self):
         response = requests.get(self.url)
         return response.json()
 
-    def load_json(self):
+    def get_response_body(self):
         data = json.dumps(self.get_response_body(), indent=1)
         return data
 
