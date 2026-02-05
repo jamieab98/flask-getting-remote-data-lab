@@ -15,4 +15,5 @@ class GetRequester:
         return data
 
 g = GetRequester("https://learn-co-curriculum.github.io/json-site-example/endpoints/people.json")
+print(g.get_response_body())
 print(g.load_json())
